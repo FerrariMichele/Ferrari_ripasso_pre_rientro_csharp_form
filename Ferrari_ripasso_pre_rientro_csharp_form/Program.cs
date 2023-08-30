@@ -16,7 +16,7 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new form1());
         }
     }
 }
