@@ -13,17 +13,28 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
     public partial class form1 : Form
     {
         #region dichiarazioni
-        
+        funzioni_form functions;
+        string fileName, fileNameTemp;
         #endregion
-
         #region eventi
         public form1()
         {
             InitializeComponent();
+            functions = new funzioni_form();
+            fileName = "ferrari.csv";
+            fileNameTemp = "ferrari_temp.csv";
+        }
+        private void form1_Load(object sender, EventArgs e)
+        {
+            if (!functions.checkFixedLen(fileName))
+                functions.createFixedLen(fileName, fileNameTemp);
         }
         private void buttonMyValue_Click(object sender, EventArgs e)
         {
-            OpenForm<FormMyValue>();
+            //OpenForm<FormMyValue>();
+            if (!functions.checkMyValue(fileName))
+                functions.createMyValue(fileName, fileNameTemp);
+            else MessageBox.Show("Nel file sono già presenti i campi Miovalore e Cancellazione Logica","Errore",MessageBoxButtons.OK,MessageBoxIcon.Error);
         }
         private void buttonCountFields_Click(object sender, EventArgs e)
         {

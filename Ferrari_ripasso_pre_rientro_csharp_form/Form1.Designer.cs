@@ -264,6 +264,7 @@
             this.MinimumSize = new System.Drawing.Size(1000, 600);
             this.Name = "form1";
             this.Text = "Registro delle Pizzerie, Rosticcerie, Fast Food e Kebabbari in Italia";
+            this.Load += new System.EventHandler(this.form1_Load);
             this.panelSideMenu.ResumeLayout(false);
             this.panelExit.ResumeLayout(false);
             this.panelButtons.ResumeLayout(false);
