@@ -91,5 +91,18 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
             File.Move(fileNameTemp, fileName);
             File.Delete(fileNameTemp);
         }
+        public int countFields(string fileName)
+        {
+            int count = 0;
+            string lineFromFile;
+            using (StreamReader csvReader = File.OpenText(fileName))
+            {
+                lineFromFile = csvReader.ReadLine();
+                string[] fields = lineFromFile.Split(';');
+                count = fields.Length;
+                csvReader.Close();
+            }
+            return count - 1;
+        }
     }
 }

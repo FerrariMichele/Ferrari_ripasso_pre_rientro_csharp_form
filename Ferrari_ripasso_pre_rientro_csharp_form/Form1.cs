@@ -38,7 +38,8 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
         }
         private void buttonCountFields_Click(object sender, EventArgs e)
         {
-
+            int fields = functions.countFields(fileName);
+            MessageBox.Show("Il file contiene " + fields + " campi", "Numero campi", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private void buttonMaxLen_Click(object sender, EventArgs e)
         {
