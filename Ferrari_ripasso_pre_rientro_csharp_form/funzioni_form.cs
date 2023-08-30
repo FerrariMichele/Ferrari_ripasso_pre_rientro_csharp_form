@@ -22,5 +22,22 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
             }
             return fixedLen;
         }
+        public void createFixedLen(string fileName, string fileNameTemp)
+        {
+            string lineFromFile;
+            using (StreamReader csvReader = File.OpenText(fileName))
+            {
+                using (StreamWriter csvWriter = new StreamWriter(fileNameTemp))
+                {
+                    while ((lineFromFile = csvReader.ReadLine()) != null)
+                    {
+                        lineFromFile = lineFromFile.PadRight(256) + "##";
+                        csvWriter.WriteLine(lineFromFile);
+                    }
+                    csvWriter.Close();
+                }
+                csvReader.Close();
+            }
+        }
     }
 }
