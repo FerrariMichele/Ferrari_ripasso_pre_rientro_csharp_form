@@ -31,39 +31,41 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
         }
         private void buttonMyValue_Click(object sender, EventArgs e)
         {
-            //OpenForm<FormMyValue>();
+            CloseForms();
             if (!functions.checkMyValue(fileName))
                 functions.createMyValue(fileName, fileNameTemp);
             else MessageBox.Show("Nel file sono già presenti i campi Miovalore e Cancellazione Logica","Errore",MessageBoxButtons.OK,MessageBoxIcon.Error);
         }
         private void buttonCountFields_Click(object sender, EventArgs e)
         {
+            CloseForms();
             int fields = functions.countFields(fileName);
             MessageBox.Show("Il file contiene " + fields + " campi", "Numero campi", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private void buttonMaxLen_Click(object sender, EventArgs e)
         {
-
+            CloseForms();
+            OpenForm<FormMaxLen>();
         }
         private void buttonAddToQueue_Click(object sender, EventArgs e)
         {
-
+            CloseForms();
         }
         private void buttonViewFields_Click(object sender, EventArgs e)
         {
-
+            CloseForms();
         }
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-
+            CloseForms();
         }
         private void buttonModify_Click(object sender, EventArgs e)
         {
-
+            CloseForms();
         }
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-
+            CloseForms();
         }
         #endregion
 
@@ -85,6 +87,18 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
             else
             {
                 viewedForm.BringToFront();
+            }
+        }
+        private void CloseForms()
+        {
+            Form[] forms = new Form[panelForm.Controls.Count];
+            for (int i = 0; i < panelForm.Controls.Count; i++)
+            {
+                forms[i] = panelForm.Controls[i] as Form;
+            }
+            foreach (Form form in forms)
+            {
+                form.Close();
             }
         }
     }

@@ -104,5 +104,31 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
             }
             return count - 1;
         }
+        public string[] maxLen(string fileName, int numField)
+        {
+            string[] maxLenFields = new string[numField + 1];
+            for (int i = 0; i < numField + 1; i++)
+                maxLenFields[i] = "";
+            string lineFromFile;
+            using (StreamReader csvReader = File.OpenText(fileName))
+            {
+                csvReader.ReadLine();
+                while ((lineFromFile = csvReader.ReadLine()) != null)
+                {
+                    string[] fields = lineFromFile.Split(';');
+                    lineFromFile = "";
+                    for (int i = 0; i < numField; i++)
+                    {
+                        if (fields[i].Length > maxLenFields[i].Length)
+                            maxLenFields[i] = fields[i];
+                        lineFromFile += fields[i] + ";";
+                    }
+                    if (lineFromFile.Length > maxLenFields[numField].Length)
+                        maxLenFields[numField] = lineFromFile;
+                }
+                csvReader.Close();
+            }
+            return maxLenFields;
+        }
     }
 }
