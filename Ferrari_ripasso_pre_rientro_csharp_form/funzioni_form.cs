@@ -130,5 +130,36 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
             }
             return maxLenFields;
         }
+        public bool checkInputLen(int numField, string[] elements)
+        {
+            string lineToFile = "";
+            for (int i = 0; i < numField; i++)
+            {
+                if (elements[i].Length == 0)
+                {
+                    return false;
+                }   
+                lineToFile += elements[i] + ";";
+            }
+            if(numField == 11)
+                if (lineToFile.Length < 256)
+                    return true;
+                else return false;
+            else
+                if (lineToFile.Length < 251)
+                    return true;
+            return false;
+        }
+        public void addToQueue(string fileName, int numField, string[] elements)
+        {
+            string lineToFile = "";
+            for (int i = 0; i < numField; i++)
+            lineToFile += elements[i] + ";";
+            using (StreamWriter csvWriter = new StreamWriter(fileName, append: true))
+            {
+                csvWriter.WriteLine(lineToFile.PadRight(256) + "##");
+                csvWriter.Close();
+            }
+        }
     }
 }

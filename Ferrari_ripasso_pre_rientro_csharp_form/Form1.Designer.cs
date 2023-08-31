@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form1));
             this.panelSideMenu = new System.Windows.Forms.Panel();
-            this.panelExit = new System.Windows.Forms.Panel();
-            this.buttonExit = new System.Windows.Forms.Button();
+            this.buttonLogOut = new System.Windows.Forms.Button();
             this.panelButtons = new System.Windows.Forms.Panel();
+            this.panelExit = new System.Windows.Forms.Panel();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonModify = new System.Windows.Forms.Button();
             this.buttonSearch = new System.Windows.Forms.Button();
@@ -44,9 +44,9 @@
             this.buttonAddMyValue = new System.Windows.Forms.Button();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.labelTitle = new System.Windows.Forms.Label();
+            this.buttonExit = new System.Windows.Forms.Button();
             this.panelForm = new System.Windows.Forms.Panel();
             this.panelSideMenu.SuspendLayout();
-            this.panelExit.SuspendLayout();
             this.panelButtons.SuspendLayout();
             this.panelTitle.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +54,7 @@
             // panelSideMenu
             // 
             this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(255)))), ((int)(((byte)(140)))));
-            this.panelSideMenu.Controls.Add(this.panelExit);
+            this.panelSideMenu.Controls.Add(this.buttonLogOut);
             this.panelSideMenu.Controls.Add(this.panelButtons);
             this.panelSideMenu.Controls.Add(this.panelTitle);
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -63,29 +63,23 @@
             this.panelSideMenu.Size = new System.Drawing.Size(200, 561);
             this.panelSideMenu.TabIndex = 0;
             // 
-            // panelExit
+            // buttonLogOut
             // 
-            this.panelExit.Controls.Add(this.buttonExit);
-            this.panelExit.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelExit.Location = new System.Drawing.Point(0, 461);
-            this.panelExit.Name = "panelExit";
-            this.panelExit.Size = new System.Drawing.Size(200, 100);
-            this.panelExit.TabIndex = 2;
-            // 
-            // buttonExit
-            // 
-            this.buttonExit.FlatAppearance.BorderSize = 0;
-            this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonExit.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExit.Location = new System.Drawing.Point(0, 25);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(200, 45);
-            this.buttonExit.TabIndex = 17;
-            this.buttonExit.Text = "Uscita";
-            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonLogOut.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonLogOut.FlatAppearance.BorderSize = 0;
+            this.buttonLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLogOut.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLogOut.Location = new System.Drawing.Point(0, 447);
+            this.buttonLogOut.Name = "buttonLogOut";
+            this.buttonLogOut.Size = new System.Drawing.Size(200, 114);
+            this.buttonLogOut.TabIndex = 17;
+            this.buttonLogOut.Text = "Uscita";
+            this.buttonLogOut.UseVisualStyleBackColor = true;
+            this.buttonLogOut.Click += new System.EventHandler(this.buttonLogOut_Click);
             // 
             // panelButtons
             // 
+            this.panelButtons.Controls.Add(this.panelExit);
             this.panelButtons.Controls.Add(this.buttonDelete);
             this.panelButtons.Controls.Add(this.buttonModify);
             this.panelButtons.Controls.Add(this.buttonSearch);
@@ -100,6 +94,13 @@
             this.panelButtons.Name = "panelButtons";
             this.panelButtons.Size = new System.Drawing.Size(200, 363);
             this.panelButtons.TabIndex = 1;
+            // 
+            // panelExit
+            // 
+            this.panelExit.Location = new System.Drawing.Point(0, 366);
+            this.panelExit.Name = "panelExit";
+            this.panelExit.Size = new System.Drawing.Size(200, 108);
+            this.panelExit.TabIndex = 0;
             // 
             // buttonDelete
             // 
@@ -241,6 +242,19 @@
             this.labelTitle.Text = "Pizzerie, Rosticcerie, Fast Food e Kebabbari in Italia";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // buttonExit
+            // 
+            this.buttonExit.FlatAppearance.BorderSize = 0;
+            this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExit.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExit.Location = new System.Drawing.Point(0, 25);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(200, 45);
+            this.buttonExit.TabIndex = 17;
+            this.buttonExit.Text = "Uscita";
+            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
             // panelForm
             // 
             this.panelForm.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelForm.BackgroundImage")));
@@ -266,7 +280,6 @@
             this.Text = "Registro delle Pizzerie, Rosticcerie, Fast Food e Kebabbari in Italia";
             this.Load += new System.EventHandler(this.form1_Load);
             this.panelSideMenu.ResumeLayout(false);
-            this.panelExit.ResumeLayout(false);
             this.panelButtons.ResumeLayout(false);
             this.panelTitle.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -291,6 +304,7 @@
         private System.Windows.Forms.Panel panelExit;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Panel panelForm;
+        private System.Windows.Forms.Button buttonLogOut;
     }
 }
 

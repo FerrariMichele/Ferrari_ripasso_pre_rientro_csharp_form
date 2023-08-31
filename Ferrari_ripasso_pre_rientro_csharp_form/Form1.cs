@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,6 +51,7 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
         private void buttonAddToQueue_Click(object sender, EventArgs e)
         {
             CloseForms();
+            OpenForm<FormAddToQueue>();
         }
         private void buttonViewFields_Click(object sender, EventArgs e)
         {
@@ -67,8 +69,20 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
         {
             CloseForms();
         }
+        private void buttonLogOut_Click(object sender, EventArgs e)
+        {
+            CloseForms();
+            var rispExt = MessageBox.Show("Chiudere l'applicazione?", "Uscita programma", MessageBoxButtons.YesNo);
+            if (rispExt == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            
+        }
         #endregion
-
         private void OpenForm<MyForm>() where MyForm : Form, new()
         {
             Form viewedForm;
@@ -100,6 +114,6 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
             {
                 form.Close();
             }
-        }
+        } 
     }
 }
