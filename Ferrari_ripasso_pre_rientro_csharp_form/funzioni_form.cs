@@ -136,9 +136,7 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
             for (int i = 0; i < numField; i++)
             {
                 if (elements[i].Length == 0)
-                {
-                    return false;
-                }   
+                    return false;  
                 lineToFile += elements[i] + ";";
             }
             if(numField == 11)
@@ -160,6 +158,22 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
                 csvWriter.WriteLine(lineToFile.PadRight(256) + "##");
                 csvWriter.Close();
             }
+        }
+        public string[] searchFieldsNames(string fileName)
+        {
+            string[] fieldsNames = new string[countFields(fileName)];
+            string lineFromFile;
+            using (StreamReader csvReader = File.OpenText(fileName))
+            {
+                lineFromFile = csvReader.ReadLine();
+                string[] fields = lineFromFile.Split(';');
+                for (int i = 0; i < fieldsNames.Length; i++)
+                {
+                    fieldsNames[i] = fields[i];
+                }
+                csvReader.Close();
+            }
+            return fieldsNames;
         }
     }
 }

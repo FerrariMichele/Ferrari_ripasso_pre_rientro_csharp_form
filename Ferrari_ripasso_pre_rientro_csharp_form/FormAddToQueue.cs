@@ -55,6 +55,7 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
             {
                 functions.addToQueue(fileName, fields, inputs);
             }
+            this.Close();
         }
     }
 }

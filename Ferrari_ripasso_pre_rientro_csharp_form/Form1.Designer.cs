@@ -65,15 +65,14 @@
             // 
             // buttonLogOut
             // 
-            this.buttonLogOut.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonLogOut.FlatAppearance.BorderSize = 0;
             this.buttonLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogOut.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogOut.Location = new System.Drawing.Point(0, 447);
+            this.buttonLogOut.Image = ((System.Drawing.Image)(resources.GetObject("buttonLogOut.Image")));
+            this.buttonLogOut.Location = new System.Drawing.Point(0, 471);
             this.buttonLogOut.Name = "buttonLogOut";
-            this.buttonLogOut.Size = new System.Drawing.Size(200, 114);
+            this.buttonLogOut.Size = new System.Drawing.Size(200, 60);
             this.buttonLogOut.TabIndex = 17;
-            this.buttonLogOut.Text = "Uscita";
             this.buttonLogOut.UseVisualStyleBackColor = true;
             this.buttonLogOut.Click += new System.EventHandler(this.buttonLogOut_Click);
             // 
