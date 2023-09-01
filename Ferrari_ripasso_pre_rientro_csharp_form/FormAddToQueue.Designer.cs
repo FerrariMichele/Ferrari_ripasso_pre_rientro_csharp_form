@@ -29,33 +29,33 @@
         private void InitializeComponent()
         {
             this.panelComune = new System.Windows.Forms.Panel();
-            this.panelRegione = new System.Windows.Forms.Panel();
-            this.panelProvincia = new System.Windows.Forms.Panel();
-            this.panelIdOSM = new System.Windows.Forms.Panel();
-            this.panelLongitudine = new System.Windows.Forms.Panel();
-            this.panelLatitudine = new System.Windows.Forms.Panel();
-            this.panelNome = new System.Windows.Forms.Panel();
-            this.panelAnno = new System.Windows.Forms.Panel();
-            this.panelData = new System.Windows.Forms.Panel();
-            this.buttonAddToQueue = new System.Windows.Forms.Button();
-            this.labelComune = new System.Windows.Forms.Label();
-            this.labelProvincia = new System.Windows.Forms.Label();
-            this.labelRegione = new System.Windows.Forms.Label();
-            this.labelNome = new System.Windows.Forms.Label();
-            this.labelAnno = new System.Windows.Forms.Label();
-            this.labelData = new System.Windows.Forms.Label();
-            this.labelIdOSM = new System.Windows.Forms.Label();
-            this.labelLongitudine = new System.Windows.Forms.Label();
-            this.labelLatitudine = new System.Windows.Forms.Label();
             this.textBoxComune = new System.Windows.Forms.TextBox();
-            this.textBoxProvincia = new System.Windows.Forms.TextBox();
+            this.labelComune = new System.Windows.Forms.Label();
+            this.panelRegione = new System.Windows.Forms.Panel();
             this.textBoxRegione = new System.Windows.Forms.TextBox();
-            this.textBoxNome = new System.Windows.Forms.TextBox();
-            this.textBoxAnno = new System.Windows.Forms.TextBox();
-            this.textBoxData = new System.Windows.Forms.TextBox();
+            this.labelRegione = new System.Windows.Forms.Label();
+            this.panelProvincia = new System.Windows.Forms.Panel();
+            this.textBoxProvincia = new System.Windows.Forms.TextBox();
+            this.labelProvincia = new System.Windows.Forms.Label();
+            this.panelIdOSM = new System.Windows.Forms.Panel();
             this.textBoxIdOSM = new System.Windows.Forms.TextBox();
+            this.labelIdOSM = new System.Windows.Forms.Label();
+            this.panelLongitudine = new System.Windows.Forms.Panel();
             this.textBoxLongitudine = new System.Windows.Forms.TextBox();
+            this.labelLongitudine = new System.Windows.Forms.Label();
+            this.panelLatitudine = new System.Windows.Forms.Panel();
             this.textBoxLatitudine = new System.Windows.Forms.TextBox();
+            this.labelLatitudine = new System.Windows.Forms.Label();
+            this.panelNome = new System.Windows.Forms.Panel();
+            this.textBoxNome = new System.Windows.Forms.TextBox();
+            this.labelNome = new System.Windows.Forms.Label();
+            this.panelAnno = new System.Windows.Forms.Panel();
+            this.textBoxAnno = new System.Windows.Forms.TextBox();
+            this.labelAnno = new System.Windows.Forms.Label();
+            this.panelData = new System.Windows.Forms.Panel();
+            this.textBoxData = new System.Windows.Forms.TextBox();
+            this.labelData = new System.Windows.Forms.Label();
+            this.buttonAddToQueue = new System.Windows.Forms.Button();
             this.panelComune.SuspendLayout();
             this.panelRegione.SuspendLayout();
             this.panelProvincia.SuspendLayout();
@@ -77,6 +77,25 @@
             this.panelComune.Size = new System.Drawing.Size(240, 150);
             this.panelComune.TabIndex = 0;
             // 
+            // textBoxComune
+            // 
+            this.textBoxComune.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxComune.Location = new System.Drawing.Point(20, 100);
+            this.textBoxComune.Name = "textBoxComune";
+            this.textBoxComune.Size = new System.Drawing.Size(200, 22);
+            this.textBoxComune.TabIndex = 1;
+            // 
+            // labelComune
+            // 
+            this.labelComune.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelComune.ForeColor = System.Drawing.Color.White;
+            this.labelComune.Location = new System.Drawing.Point(0, 0);
+            this.labelComune.Name = "labelComune";
+            this.labelComune.Size = new System.Drawing.Size(240, 97);
+            this.labelComune.TabIndex = 0;
+            this.labelComune.Text = "Comune";
+            this.labelComune.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panelRegione
             // 
             this.panelRegione.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
@@ -86,6 +105,25 @@
             this.panelRegione.Name = "panelRegione";
             this.panelRegione.Size = new System.Drawing.Size(240, 150);
             this.panelRegione.TabIndex = 1;
+            // 
+            // textBoxRegione
+            // 
+            this.textBoxRegione.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxRegione.Location = new System.Drawing.Point(20, 100);
+            this.textBoxRegione.Name = "textBoxRegione";
+            this.textBoxRegione.Size = new System.Drawing.Size(200, 22);
+            this.textBoxRegione.TabIndex = 2;
+            // 
+            // labelRegione
+            // 
+            this.labelRegione.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRegione.ForeColor = System.Drawing.Color.White;
+            this.labelRegione.Location = new System.Drawing.Point(0, 0);
+            this.labelRegione.Name = "labelRegione";
+            this.labelRegione.Size = new System.Drawing.Size(240, 97);
+            this.labelRegione.TabIndex = 1;
+            this.labelRegione.Text = "Regione";
+            this.labelRegione.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelProvincia
             // 
@@ -97,6 +135,25 @@
             this.panelProvincia.Size = new System.Drawing.Size(240, 150);
             this.panelProvincia.TabIndex = 2;
             // 
+            // textBoxProvincia
+            // 
+            this.textBoxProvincia.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxProvincia.Location = new System.Drawing.Point(20, 100);
+            this.textBoxProvincia.Name = "textBoxProvincia";
+            this.textBoxProvincia.Size = new System.Drawing.Size(200, 22);
+            this.textBoxProvincia.TabIndex = 2;
+            // 
+            // labelProvincia
+            // 
+            this.labelProvincia.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelProvincia.ForeColor = System.Drawing.Color.White;
+            this.labelProvincia.Location = new System.Drawing.Point(0, 0);
+            this.labelProvincia.Name = "labelProvincia";
+            this.labelProvincia.Size = new System.Drawing.Size(240, 97);
+            this.labelProvincia.TabIndex = 1;
+            this.labelProvincia.Text = "Provincia";
+            this.labelProvincia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panelIdOSM
             // 
             this.panelIdOSM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(1)))), ((int)(((byte)(16)))));
@@ -106,6 +163,25 @@
             this.panelIdOSM.Name = "panelIdOSM";
             this.panelIdOSM.Size = new System.Drawing.Size(240, 150);
             this.panelIdOSM.TabIndex = 1;
+            // 
+            // textBoxIdOSM
+            // 
+            this.textBoxIdOSM.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIdOSM.Location = new System.Drawing.Point(20, 100);
+            this.textBoxIdOSM.Name = "textBoxIdOSM";
+            this.textBoxIdOSM.Size = new System.Drawing.Size(200, 22);
+            this.textBoxIdOSM.TabIndex = 3;
+            // 
+            // labelIdOSM
+            // 
+            this.labelIdOSM.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIdOSM.ForeColor = System.Drawing.Color.White;
+            this.labelIdOSM.Location = new System.Drawing.Point(0, 0);
+            this.labelIdOSM.Name = "labelIdOSM";
+            this.labelIdOSM.Size = new System.Drawing.Size(240, 97);
+            this.labelIdOSM.TabIndex = 2;
+            this.labelIdOSM.Text = "ID OpenStreetMap";
+            this.labelIdOSM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelLongitudine
             // 
@@ -117,6 +193,25 @@
             this.panelLongitudine.Size = new System.Drawing.Size(240, 150);
             this.panelLongitudine.TabIndex = 1;
             // 
+            // textBoxLongitudine
+            // 
+            this.textBoxLongitudine.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxLongitudine.Location = new System.Drawing.Point(20, 100);
+            this.textBoxLongitudine.Name = "textBoxLongitudine";
+            this.textBoxLongitudine.Size = new System.Drawing.Size(200, 22);
+            this.textBoxLongitudine.TabIndex = 3;
+            // 
+            // labelLongitudine
+            // 
+            this.labelLongitudine.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLongitudine.ForeColor = System.Drawing.Color.White;
+            this.labelLongitudine.Location = new System.Drawing.Point(0, 0);
+            this.labelLongitudine.Name = "labelLongitudine";
+            this.labelLongitudine.Size = new System.Drawing.Size(240, 97);
+            this.labelLongitudine.TabIndex = 2;
+            this.labelLongitudine.Text = "Longitudine";
+            this.labelLongitudine.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panelLatitudine
             // 
             this.panelLatitudine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(1)))), ((int)(((byte)(16)))));
@@ -126,6 +221,26 @@
             this.panelLatitudine.Name = "panelLatitudine";
             this.panelLatitudine.Size = new System.Drawing.Size(240, 150);
             this.panelLatitudine.TabIndex = 1;
+            // 
+            // textBoxLatitudine
+            // 
+            this.textBoxLatitudine.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxLatitudine.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxLatitudine.Location = new System.Drawing.Point(20, 100);
+            this.textBoxLatitudine.Name = "textBoxLatitudine";
+            this.textBoxLatitudine.Size = new System.Drawing.Size(200, 22);
+            this.textBoxLatitudine.TabIndex = 3;
+            // 
+            // labelLatitudine
+            // 
+            this.labelLatitudine.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLatitudine.ForeColor = System.Drawing.Color.White;
+            this.labelLatitudine.Location = new System.Drawing.Point(0, 0);
+            this.labelLatitudine.Name = "labelLatitudine";
+            this.labelLatitudine.Size = new System.Drawing.Size(240, 97);
+            this.labelLatitudine.TabIndex = 2;
+            this.labelLatitudine.Text = "Latitudine";
+            this.labelLatitudine.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelNome
             // 
@@ -137,6 +252,25 @@
             this.panelNome.Size = new System.Drawing.Size(240, 150);
             this.panelNome.TabIndex = 2;
             // 
+            // textBoxNome
+            // 
+            this.textBoxNome.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNome.Location = new System.Drawing.Point(20, 100);
+            this.textBoxNome.Name = "textBoxNome";
+            this.textBoxNome.Size = new System.Drawing.Size(200, 22);
+            this.textBoxNome.TabIndex = 2;
+            // 
+            // labelNome
+            // 
+            this.labelNome.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNome.ForeColor = System.Drawing.Color.White;
+            this.labelNome.Location = new System.Drawing.Point(0, 0);
+            this.labelNome.Name = "labelNome";
+            this.labelNome.Size = new System.Drawing.Size(240, 97);
+            this.labelNome.TabIndex = 1;
+            this.labelNome.Text = "Nome";
+            this.labelNome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panelAnno
             // 
             this.panelAnno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(22)))), ((int)(((byte)(0)))));
@@ -147,6 +281,25 @@
             this.panelAnno.Size = new System.Drawing.Size(240, 150);
             this.panelAnno.TabIndex = 3;
             // 
+            // textBoxAnno
+            // 
+            this.textBoxAnno.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxAnno.Location = new System.Drawing.Point(20, 100);
+            this.textBoxAnno.Name = "textBoxAnno";
+            this.textBoxAnno.Size = new System.Drawing.Size(200, 22);
+            this.textBoxAnno.TabIndex = 2;
+            // 
+            // labelAnno
+            // 
+            this.labelAnno.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAnno.ForeColor = System.Drawing.Color.White;
+            this.labelAnno.Location = new System.Drawing.Point(0, 0);
+            this.labelAnno.Name = "labelAnno";
+            this.labelAnno.Size = new System.Drawing.Size(240, 97);
+            this.labelAnno.TabIndex = 1;
+            this.labelAnno.Text = "Anno di Inserimento";
+            this.labelAnno.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panelData
             // 
             this.panelData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(22)))), ((int)(((byte)(0)))));
@@ -156,6 +309,25 @@
             this.panelData.Name = "panelData";
             this.panelData.Size = new System.Drawing.Size(240, 150);
             this.panelData.TabIndex = 4;
+            // 
+            // textBoxData
+            // 
+            this.textBoxData.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxData.Location = new System.Drawing.Point(20, 100);
+            this.textBoxData.Name = "textBoxData";
+            this.textBoxData.Size = new System.Drawing.Size(200, 22);
+            this.textBoxData.TabIndex = 2;
+            // 
+            // labelData
+            // 
+            this.labelData.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelData.ForeColor = System.Drawing.Color.White;
+            this.labelData.Location = new System.Drawing.Point(0, 0);
+            this.labelData.Name = "labelData";
+            this.labelData.Size = new System.Drawing.Size(240, 97);
+            this.labelData.TabIndex = 1;
+            this.labelData.Text = "Data e ora inserimento";
+            this.labelData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonAddToQueue
             // 
@@ -170,178 +342,6 @@
             this.buttonAddToQueue.Text = "Aggiungi";
             this.buttonAddToQueue.UseVisualStyleBackColor = false;
             this.buttonAddToQueue.Click += new System.EventHandler(this.buttonAddToQueue_Click);
-            // 
-            // labelComune
-            // 
-            this.labelComune.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelComune.ForeColor = System.Drawing.Color.White;
-            this.labelComune.Location = new System.Drawing.Point(0, 0);
-            this.labelComune.Name = "labelComune";
-            this.labelComune.Size = new System.Drawing.Size(240, 97);
-            this.labelComune.TabIndex = 0;
-            this.labelComune.Text = "Comune";
-            this.labelComune.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelProvincia
-            // 
-            this.labelProvincia.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProvincia.ForeColor = System.Drawing.Color.White;
-            this.labelProvincia.Location = new System.Drawing.Point(0, 0);
-            this.labelProvincia.Name = "labelProvincia";
-            this.labelProvincia.Size = new System.Drawing.Size(240, 97);
-            this.labelProvincia.TabIndex = 1;
-            this.labelProvincia.Text = "Provincia";
-            this.labelProvincia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelRegione
-            // 
-            this.labelRegione.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRegione.ForeColor = System.Drawing.Color.White;
-            this.labelRegione.Location = new System.Drawing.Point(0, 0);
-            this.labelRegione.Name = "labelRegione";
-            this.labelRegione.Size = new System.Drawing.Size(240, 97);
-            this.labelRegione.TabIndex = 1;
-            this.labelRegione.Text = "Regione";
-            this.labelRegione.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelNome
-            // 
-            this.labelNome.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNome.ForeColor = System.Drawing.Color.White;
-            this.labelNome.Location = new System.Drawing.Point(0, 0);
-            this.labelNome.Name = "labelNome";
-            this.labelNome.Size = new System.Drawing.Size(240, 97);
-            this.labelNome.TabIndex = 1;
-            this.labelNome.Text = "Nome";
-            this.labelNome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelAnno
-            // 
-            this.labelAnno.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAnno.ForeColor = System.Drawing.Color.White;
-            this.labelAnno.Location = new System.Drawing.Point(0, 0);
-            this.labelAnno.Name = "labelAnno";
-            this.labelAnno.Size = new System.Drawing.Size(240, 97);
-            this.labelAnno.TabIndex = 1;
-            this.labelAnno.Text = "Anno di Inserimento";
-            this.labelAnno.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelData
-            // 
-            this.labelData.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelData.ForeColor = System.Drawing.Color.White;
-            this.labelData.Location = new System.Drawing.Point(0, 0);
-            this.labelData.Name = "labelData";
-            this.labelData.Size = new System.Drawing.Size(240, 97);
-            this.labelData.TabIndex = 1;
-            this.labelData.Text = "Data e ora inserimento";
-            this.labelData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelIdOSM
-            // 
-            this.labelIdOSM.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIdOSM.ForeColor = System.Drawing.Color.White;
-            this.labelIdOSM.Location = new System.Drawing.Point(0, 0);
-            this.labelIdOSM.Name = "labelIdOSM";
-            this.labelIdOSM.Size = new System.Drawing.Size(240, 97);
-            this.labelIdOSM.TabIndex = 2;
-            this.labelIdOSM.Text = "ID OpenStreetMap";
-            this.labelIdOSM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelLongitudine
-            // 
-            this.labelLongitudine.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLongitudine.ForeColor = System.Drawing.Color.White;
-            this.labelLongitudine.Location = new System.Drawing.Point(0, 0);
-            this.labelLongitudine.Name = "labelLongitudine";
-            this.labelLongitudine.Size = new System.Drawing.Size(240, 97);
-            this.labelLongitudine.TabIndex = 2;
-            this.labelLongitudine.Text = "Longitudine";
-            this.labelLongitudine.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelLatitudine
-            // 
-            this.labelLatitudine.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLatitudine.ForeColor = System.Drawing.Color.White;
-            this.labelLatitudine.Location = new System.Drawing.Point(0, 0);
-            this.labelLatitudine.Name = "labelLatitudine";
-            this.labelLatitudine.Size = new System.Drawing.Size(240, 97);
-            this.labelLatitudine.TabIndex = 2;
-            this.labelLatitudine.Text = "Latitudine";
-            this.labelLatitudine.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // textBoxComune
-            // 
-            this.textBoxComune.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxComune.Location = new System.Drawing.Point(20, 100);
-            this.textBoxComune.Name = "textBoxComune";
-            this.textBoxComune.Size = new System.Drawing.Size(200, 22);
-            this.textBoxComune.TabIndex = 1;
-            // 
-            // textBoxProvincia
-            // 
-            this.textBoxProvincia.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxProvincia.Location = new System.Drawing.Point(20, 100);
-            this.textBoxProvincia.Name = "textBoxProvincia";
-            this.textBoxProvincia.Size = new System.Drawing.Size(200, 22);
-            this.textBoxProvincia.TabIndex = 2;
-            // 
-            // textBoxRegione
-            // 
-            this.textBoxRegione.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRegione.Location = new System.Drawing.Point(20, 100);
-            this.textBoxRegione.Name = "textBoxRegione";
-            this.textBoxRegione.Size = new System.Drawing.Size(200, 22);
-            this.textBoxRegione.TabIndex = 2;
-            // 
-            // textBoxNome
-            // 
-            this.textBoxNome.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNome.Location = new System.Drawing.Point(20, 100);
-            this.textBoxNome.Name = "textBoxNome";
-            this.textBoxNome.Size = new System.Drawing.Size(200, 22);
-            this.textBoxNome.TabIndex = 2;
-            // 
-            // textBoxAnno
-            // 
-            this.textBoxAnno.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAnno.Location = new System.Drawing.Point(20, 100);
-            this.textBoxAnno.Name = "textBoxAnno";
-            this.textBoxAnno.Size = new System.Drawing.Size(200, 22);
-            this.textBoxAnno.TabIndex = 2;
-            // 
-            // textBoxData
-            // 
-            this.textBoxData.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxData.Location = new System.Drawing.Point(20, 100);
-            this.textBoxData.Name = "textBoxData";
-            this.textBoxData.Size = new System.Drawing.Size(200, 22);
-            this.textBoxData.TabIndex = 2;
-            // 
-            // textBoxIdOSM
-            // 
-            this.textBoxIdOSM.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxIdOSM.Location = new System.Drawing.Point(20, 100);
-            this.textBoxIdOSM.Name = "textBoxIdOSM";
-            this.textBoxIdOSM.Size = new System.Drawing.Size(200, 22);
-            this.textBoxIdOSM.TabIndex = 3;
-            // 
-            // textBoxLongitudine
-            // 
-            this.textBoxLongitudine.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLongitudine.Location = new System.Drawing.Point(20, 100);
-            this.textBoxLongitudine.Name = "textBoxLongitudine";
-            this.textBoxLongitudine.Size = new System.Drawing.Size(200, 22);
-            this.textBoxLongitudine.TabIndex = 3;
-            // 
-            // textBoxLatitudine
-            // 
-            this.textBoxLatitudine.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxLatitudine.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLatitudine.Location = new System.Drawing.Point(20, 100);
-            this.textBoxLatitudine.Name = "textBoxLatitudine";
-            this.textBoxLatitudine.Size = new System.Drawing.Size(200, 22);
-            this.textBoxLatitudine.TabIndex = 3;
             // 
             // FormAddToQueue
             // 

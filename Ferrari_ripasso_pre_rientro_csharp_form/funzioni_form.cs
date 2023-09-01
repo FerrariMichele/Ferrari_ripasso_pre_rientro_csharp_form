@@ -197,5 +197,17 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
             }
             return new Tuple<string, int>("", -1);
         }
+        public void modifyRecord(string fileName, int numFields, string[] elements, int position, int recordLen)
+        {
+            string lineToFile = "";
+            for (int i = 0; i < numFields; i++)
+                lineToFile += elements[i] + ";";
+            lineToFile = lineToFile.PadRight(256) + "##";
+            var csvRanWriter = new FileStream(fileName, FileMode.Open, FileAccess.ReadWrite);
+            csvRanWriter.Seek(recordLen * position + 2, SeekOrigin.Current);
+            byte[] bytes = Encoding.ASCII.GetBytes(lineToFile);
+            csvRanWriter.Write(bytes, 0, 258);
+            csvRanWriter.Close();
+        }
     }
 }

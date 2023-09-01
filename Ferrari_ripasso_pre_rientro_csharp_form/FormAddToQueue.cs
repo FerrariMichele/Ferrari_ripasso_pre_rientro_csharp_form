@@ -26,6 +26,7 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
             fileNameTemp = "ferrari_temp.csv";
             rnd = new Random();
         }
+
         private void buttonAddToQueue_Click(object sender, EventArgs e)
         {
             int fields = functions.countFields(fileName);
