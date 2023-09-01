@@ -175,5 +175,27 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
             }
             return fieldsNames;
         }
+        public Tuple<string, int> searchPosition(string fileName, string identifier)
+        {
+            Tuple<string, int> RecordAndPosition; 
+            using (StreamReader csvReader = File.OpenText(fileName))
+            {
+                string lineFromFile;
+                int position = 0;
+                while ((lineFromFile = csvReader.ReadLine()) != null)
+                {
+                    string[] fields = lineFromFile.Split(';');
+                    if (fields[6] == identifier)
+                    {
+                        csvReader.Close();
+                        RecordAndPosition = new Tuple<string, int>(lineFromFile, position);
+                        return RecordAndPosition;
+                    }
+                    position++;
+                }
+                csvReader.Close();
+            }
+            return new Tuple<string, int>("", -1);
+        }
     }
 }

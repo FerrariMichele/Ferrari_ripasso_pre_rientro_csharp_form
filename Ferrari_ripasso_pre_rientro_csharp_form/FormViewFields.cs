@@ -26,28 +26,6 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
             fileName = "ferrari.csv";
             viewData();
         }
-        private void listView1_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
-        {
-            e.Graphics.FillRectangle(Brushes.Red, e.Bounds);
-            e.DrawText();
-        }
-        private static void headerDraw(object sender, DrawListViewColumnHeaderEventArgs e, Color backColor, Color foreColor)
-        {
-            using (SolidBrush backBrush = new SolidBrush(backColor))
-            {
-                e.Graphics.FillRectangle(backBrush, e.Bounds);
-            }
-
-            using (SolidBrush foreBrush = new SolidBrush(foreColor))
-            {
-                e.Graphics.DrawString(e.Header.Text, e.Font, foreBrush, e.Bounds);
-            }
-        }
-
-        private static void bodyDraw(object sender, DrawListViewItemEventArgs e)
-        {
-            e.DrawDefault = true;
-        }
         private void viewData()
         {
             listView1.Clear();
@@ -60,8 +38,6 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
                 for (int i = 0; i < columns.Length; i++)
                 {
                     listView1.Columns.Add(columns[i], listView1.Width / 3, HorizontalAlignment.Center);
-                    listView1.DrawColumnHeader += new DrawListViewColumnHeaderEventHandler((sender, e) => headerDraw(sender, e, backColor, foreColor));
-                    listView1.DrawItem += new DrawListViewItemEventHandler(bodyDraw);
                 }
                 listView1.GridLines = true;
                 lineFromFile = csvReader.ReadLine();

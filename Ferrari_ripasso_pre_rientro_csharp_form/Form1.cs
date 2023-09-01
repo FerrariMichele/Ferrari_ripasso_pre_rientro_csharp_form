@@ -61,6 +61,7 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
         private void buttonSearch_Click(object sender, EventArgs e)
         {
             CloseForms();
+            OpenForm<FormSearch>();
         }
         private void buttonModify_Click(object sender, EventArgs e)
         {
