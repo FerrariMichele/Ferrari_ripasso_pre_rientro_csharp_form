@@ -197,17 +197,40 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
             }
             return new Tuple<string, int>("", -1);
         }
+        public void subChar(string fileName, string fileNameTemp)
+        {
+            string lineFromFile;
+            using (StreamReader csvReader = File.OpenText(fileName))
+            {
+                using (StreamWriter csvWriter = new StreamWriter(fileNameTemp))
+                {
+                    while ((lineFromFile = csvReader.ReadLine()) != null)
+                    {
+                        lineFromFile = lineFromFile.Replace('\uFFFD', '\'');
+                        csvWriter.WriteLine(lineFromFile);
+                    }
+                    csvWriter.Close();
+                }
+                csvReader.Close();
+            }
+            File.Delete(fileName);
+            File.Move(fileNameTemp, fileName);
+            File.Delete(fileNameTemp);
+        }
         public void modifyRecord(string fileName, int numFields, string[] elements, int position, int recordLen)
         {
             string lineToFile = "";
             for (int i = 0; i < numFields; i++)
                 lineToFile += elements[i] + ";";
             lineToFile = lineToFile.PadRight(256) + "##";
-            var csvRanWriter = new FileStream(fileName, FileMode.Open, FileAccess.ReadWrite);
-            csvRanWriter.Seek(recordLen * position + 2, SeekOrigin.Current);
-            byte[] bytes = Encoding.ASCII.GetBytes(lineToFile);
-            csvRanWriter.Write(bytes, 0, 258);
-            csvRanWriter.Close();
+            using (FileStream csvRanWriter = new FileStream(fileName, FileMode.Open, FileAccess.ReadWrite))
+            {
+                byte[] bytes = Encoding.UTF8.GetBytes(lineToFile);
+                long charNum = position * 260;
+                csvRanWriter.Seek(charNum, SeekOrigin.Current);
+                csvRanWriter.Write(bytes, 0, bytes.Length);
+                csvRanWriter.Close();
+            }
         }
     }
 }

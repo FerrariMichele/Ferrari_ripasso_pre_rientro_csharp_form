@@ -29,6 +29,7 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
         {
             if (!functions.checkFixedLen(fileName))
                 functions.createFixedLen(fileName, fileNameTemp);
+            functions.subChar(fileName, fileNameTemp);
         }
         private void buttonMyValue_Click(object sender, EventArgs e)
         {
