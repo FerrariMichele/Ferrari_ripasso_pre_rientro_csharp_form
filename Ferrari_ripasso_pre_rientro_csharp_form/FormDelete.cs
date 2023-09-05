@@ -29,14 +29,17 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
         {
             if (!functions.checkMyValue(fileName))
             {
-                MessageBox.Show("Nel file non sono presenti i campi Miovalore e Cancellazione Logica\nAggiugerli prima di procedere", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nel file non sono presenti i campi\nMiovalore e Cancellazione Logica\nAggiugerli prima di procedere", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
             else
             {
                 Tuple <string, int> RecordAndPosition = functions.searchPosition(fileName, textBoxDelete.Text, false);
                 if (RecordAndPosition.Item2 == -1)
+                {
                     MessageBox.Show("Il record cercato non è presente", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    textBoxDelete.Text = "";
+                }
                 else
                 {
                     int fields = functions.countFields(fileName);
@@ -49,14 +52,17 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
         {
             if (!functions.checkMyValue(fileName))
             {
-                MessageBox.Show("Nel file non sono presenti i campi Miovalore e Cancellazione Logica\nAggiugerli prima di procedere", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nel file non sono presenti i campi\nMiovalore e Cancellazione Logica\nAggiugerli prima di procedere", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
             else
             {
-                Tuple<string, int> RecordAndPosition = functions.searchPosition(fileName, textBoxDelete.Text, true);
+                Tuple<string, int> RecordAndPosition = functions.searchPosition(fileName, textBoxRecover.Text, true);
                 if (RecordAndPosition.Item2 == -1)
+                {
                     MessageBox.Show("Il record cercato non è presente", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    textBoxRecover.Text = "";
+                }
                 else
                 {
                     int fields = functions.countFields(fileName);
@@ -69,7 +75,7 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
         {
             if (!functions.checkMyValue(fileName))
             {
-                MessageBox.Show("Nel file non sono presenti i campi Miovalore e Cancellazione Logica\nAggiugerli prima di procedere", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nel file non sono presenti i campi\nMiovalore e Cancellazione Logica\nAggiugerli prima di procedere", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
             else

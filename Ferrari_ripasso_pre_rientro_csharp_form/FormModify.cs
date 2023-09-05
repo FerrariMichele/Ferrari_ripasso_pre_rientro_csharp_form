@@ -49,7 +49,10 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
             {
                 RecordAndPosition = functions.searchPosition(fileName, textBoxSearch.Text, false);
                 if (RecordAndPosition.Item2 == -1)
+                {
                     MessageBox.Show("Il record cercato non è presente", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    textBoxSearch.Text = "";
+                }
                 else
                 {
                     panelSearch.Visible = false;
@@ -87,10 +90,12 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
             if (!functions.checkInputLen(fields, inputs))
             {
                 if (!functions.checkMyValue(fileName))
-                    MessageBox.Show("Errore: uno o più campi sono vuoti o troppo lunghi\nLa lunghezza totale non deve superare i 242 caratteri", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Uno o più campi sono vuoti o troppo lunghi\nLa lunghezza totale non deve superare i 242 caratteri", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
-                    MessageBox.Show("Errore: uno o più campi sono vuoti o troppo lunghi\nLa lunghezza totale non deve superare i 245 caratteri", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Uno o più campi sono vuoti o troppo lunghi\nLa lunghezza totale non deve superare i 245 caratteri", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else if (!functions.checkInputChars(fields, inputs))
+                MessageBox.Show("Uno o più campi contengono caratteri non validi\n ';', '#', '\\'", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 functions.modifyRecord(fileName, fields, inputs, RecordAndPosition.Item2, recordLen);

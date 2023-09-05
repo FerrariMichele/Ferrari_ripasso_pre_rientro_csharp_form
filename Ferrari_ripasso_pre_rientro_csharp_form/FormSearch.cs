@@ -47,7 +47,10 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
             {
                 Tuple<string, int> RecordAndPosition = functions.searchPosition(fileName, textBoxSearch.Text, false);
                 if (RecordAndPosition.Item2 == -1)
+                {
                     MessageBox.Show("Il record cercato non è presente", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    textBoxSearch.Text = "";
+                }
                 else
                 {
                     labelSearchNum.Text = RecordAndPosition.Item2.ToString();

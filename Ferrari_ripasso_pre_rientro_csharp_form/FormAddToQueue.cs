@@ -52,6 +52,8 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
                 else
                     MessageBox.Show("Errore: uno o più campi sono vuoti o troppo lunghi\nLa lunghezza totale non deve superare i 245 caratteri", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else if (!functions.checkInputChars(fields, inputs))
+                MessageBox.Show("Uno o più campi contengono caratteri non validi\n ';', '#', '\\'", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 functions.addToQueue(fileName, fields, inputs);

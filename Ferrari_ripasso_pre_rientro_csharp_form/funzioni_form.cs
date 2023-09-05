@@ -148,6 +148,15 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
                     return true;
             return false;
         }
+        public bool checkInputChars(int numField, string[] elements)
+        {
+            for(int i = 0; i < numField; i++)
+            {
+                if (elements[i].Contains(';') || elements[i].Contains('\\') || elements[i].Contains('#'))
+                    return false;
+            }  
+            return true;
+        }
         public void addToQueue(string fileName, int numField, string[] elements)
         {
             string lineToFile = "";
@@ -181,23 +190,24 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
         }
         public Tuple<string, int> searchPosition(string fileName, string identifier, bool deleted)
         {
-            int numFields = countFields(fileName);
             Tuple<string, int> RecordAndPosition; 
             using (StreamReader csvReader = File.OpenText(fileName))
             {
                 string lineFromFile;
                 int position = 0;
-                if (numFields == 11)
+                if (countFields(fileName) == 11)
                 {
                     while ((lineFromFile = csvReader.ReadLine()) != null)
                     {
                         string[] fields = lineFromFile.Split(';');
                         if (fields[6] == identifier)
                         {
-                            if (!deleted && fields[10] == 0.ToString() || deleted && fields[10] == 1.ToString())
-                            csvReader.Close();
-                            RecordAndPosition = new Tuple<string, int>(lineFromFile, position);
-                            return RecordAndPosition;
+                            if (((fields[10] == 0.ToString() && !deleted) || (fields[10] == 1.ToString() && deleted == true)) && position != 0)
+                            {
+                                csvReader.Close();
+                                RecordAndPosition = new Tuple<string, int>(lineFromFile, position);
+                                return RecordAndPosition;
+                            }
                         }
                         position++;
                     }
@@ -207,7 +217,7 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
                     while ((lineFromFile = csvReader.ReadLine()) != null)
                     {
                         string[] fields = lineFromFile.Split(';');
-                        if (fields[6] == identifier)
+                        if (fields[6] == identifier && position != 0)
                         {
                             csvReader.Close();
                             RecordAndPosition = new Tuple<string, int>(lineFromFile, position);
@@ -274,8 +284,9 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
         public void recoverRecord(string fileName, int numFields, string elements, int position, int recordLen)
         {
             string lineToFile = "";
+            string[] fields = elements.Split(';');
             for (int i = 0; i < numFields - 1; i++)
-                lineToFile += elements[i] + ";";
+                lineToFile += fields[i] + ";";
             lineToFile += "0;";
             lineToFile = lineToFile.PadRight(256) + "##";
             using (FileStream csvRanWriter = new FileStream(fileName, FileMode.Open, FileAccess.ReadWrite))
@@ -294,6 +305,7 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
                 using (StreamWriter csvWriter = new StreamWriter(fileNameTemp))
                 {
                     lineFromFile = csvReader.ReadLine();
+                    csvWriter.WriteLine(lineFromFile);
                     while ((lineFromFile = csvReader.ReadLine()) != null)
                     {
                         string[] fields = lineFromFile.Split(';');

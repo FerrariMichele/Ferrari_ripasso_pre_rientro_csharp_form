@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDelete));
             this.panelPermDelete = new System.Windows.Forms.Panel();
             this.buttonPermDelete = new System.Windows.Forms.Button();
             this.labelPermDelete = new System.Windows.Forms.Label();
@@ -42,9 +43,15 @@
             this.labelDeleteTitle = new System.Windows.Forms.Label();
             this.labelPermDeleteTitle = new System.Windows.Forms.Label();
             this.labelRecoverTitle = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelPermDelete.SuspendLayout();
             this.panelDelete.SuspendLayout();
             this.panelRecover.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelPermDelete
@@ -172,9 +179,9 @@
             this.labelDeleteTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelDeleteTitle.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDeleteTitle.ForeColor = System.Drawing.Color.Black;
-            this.labelDeleteTitle.Location = new System.Drawing.Point(14, 30);
+            this.labelDeleteTitle.Location = new System.Drawing.Point(49, 30);
             this.labelDeleteTitle.Name = "labelDeleteTitle";
-            this.labelDeleteTitle.Size = new System.Drawing.Size(245, 150);
+            this.labelDeleteTitle.Size = new System.Drawing.Size(149, 150);
             this.labelDeleteTitle.TabIndex = 7;
             this.labelDeleteTitle.Text = "Cancellazione";
             this.labelDeleteTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -184,9 +191,9 @@
             // 
             this.labelPermDeleteTitle.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPermDeleteTitle.ForeColor = System.Drawing.Color.Black;
-            this.labelPermDeleteTitle.Location = new System.Drawing.Point(19, 380);
+            this.labelPermDeleteTitle.Location = new System.Drawing.Point(14, 380);
             this.labelPermDeleteTitle.Name = "labelPermDeleteTitle";
-            this.labelPermDeleteTitle.Size = new System.Drawing.Size(242, 150);
+            this.labelPermDeleteTitle.Size = new System.Drawing.Size(184, 150);
             this.labelPermDeleteTitle.TabIndex = 9;
             this.labelPermDeleteTitle.Text = "Ricompattazione";
             this.labelPermDeleteTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -195,18 +202,51 @@
             // 
             this.labelRecoverTitle.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRecoverTitle.ForeColor = System.Drawing.Color.Black;
-            this.labelRecoverTitle.Location = new System.Drawing.Point(267, 205);
+            this.labelRecoverTitle.Location = new System.Drawing.Point(345, 205);
             this.labelRecoverTitle.Name = "labelRecoverTitle";
-            this.labelRecoverTitle.Size = new System.Drawing.Size(250, 150);
+            this.labelRecoverTitle.Size = new System.Drawing.Size(109, 150);
             this.labelRecoverTitle.TabIndex = 8;
             this.labelRecoverTitle.Text = "Recupero";
             this.labelRecoverTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Location = new System.Drawing.Point(204, 438);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(57, 50);
+            this.pictureBox3.TabIndex = 14;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(460, 260);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(57, 50);
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(204, 85);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(57, 50);
+            this.pictureBox2.TabIndex = 16;
+            this.pictureBox2.TabStop = false;
             // 
             // FormDelete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.labelPermDeleteTitle);
             this.Controls.Add(this.labelRecoverTitle);
             this.Controls.Add(this.labelDeleteTitle);
@@ -220,6 +260,9 @@
             this.panelDelete.PerformLayout();
             this.panelRecover.ResumeLayout(false);
             this.panelRecover.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -240,5 +283,8 @@
         private System.Windows.Forms.Label labelDeleteTitle;
         private System.Windows.Forms.Label labelPermDeleteTitle;
         private System.Windows.Forms.Label labelRecoverTitle;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
