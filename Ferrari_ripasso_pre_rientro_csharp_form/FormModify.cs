@@ -26,7 +26,7 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
             functions = new funzioni_form();
             fileName = "ferrari.csv";
             rnd = new Random();
-            recordLen = 258;
+            recordLen = 260;
         }
         private void FormModify_Load(object sender, EventArgs e)
         {
@@ -47,7 +47,7 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
                 MessageBox.Show("Inserire un valore da cercare", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                RecordAndPosition = functions.searchPosition(fileName, textBoxSearch.Text);
+                RecordAndPosition = functions.searchPosition(fileName, textBoxSearch.Text, false);
                 if (RecordAndPosition.Item2 == -1)
                     MessageBox.Show("Il record cercato non è presente", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else

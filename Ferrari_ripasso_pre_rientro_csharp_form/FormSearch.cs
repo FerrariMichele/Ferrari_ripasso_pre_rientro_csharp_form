@@ -30,7 +30,7 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
         }
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            Tuple<string, int> RecordAndPosition = functions.searchPosition(fileName, textBoxSearch.Text);
+            Tuple<string, int> RecordAndPosition = functions.searchPosition(fileName, textBoxSearch.Text, false);
             if (RecordAndPosition.Item2 == -1)
                 MessageBox.Show("Il record cercato non è presente", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
@@ -45,7 +45,7 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
                 MessageBox.Show("Inserire un valore da cercare", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                Tuple<string, int> RecordAndPosition = functions.searchPosition(fileName, textBoxSearch.Text);
+                Tuple<string, int> RecordAndPosition = functions.searchPosition(fileName, textBoxSearch.Text, false);
                 if (RecordAndPosition.Item2 == -1)
                     MessageBox.Show("Il record cercato non è presente", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else

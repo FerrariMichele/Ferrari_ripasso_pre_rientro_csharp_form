@@ -152,11 +152,15 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
         {
             string lineToFile = "";
             for (int i = 0; i < numField; i++)
-            lineToFile += elements[i] + ";";
-            using (StreamWriter csvWriter = new StreamWriter(fileName, append: true))
+                lineToFile += elements[i] + ";";
+            lineToFile = lineToFile.Replace('\uFFFD', '\'');
+            lineToFile = lineToFile.PadRight(256) + "##";
+            using (FileStream csvRanWriter = new FileStream(fileName, FileMode.Open, FileAccess.ReadWrite))
             {
-                csvWriter.WriteLine(lineToFile.PadRight(256) + "##");
-                csvWriter.Close();
+                byte[] bytes = Encoding.UTF8.GetBytes(lineToFile);
+                csvRanWriter.Seek(0, SeekOrigin.End);
+                csvRanWriter.Write(bytes, 0, bytes.Length);
+                csvRanWriter.Close();
             }
         }
         public string[] searchFieldsNames(string fileName)
@@ -175,23 +179,42 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
             }
             return fieldsNames;
         }
-        public Tuple<string, int> searchPosition(string fileName, string identifier)
+        public Tuple<string, int> searchPosition(string fileName, string identifier, bool deleted)
         {
+            int numFields = countFields(fileName);
             Tuple<string, int> RecordAndPosition; 
             using (StreamReader csvReader = File.OpenText(fileName))
             {
                 string lineFromFile;
                 int position = 0;
-                while ((lineFromFile = csvReader.ReadLine()) != null)
+                if (numFields == 11)
                 {
-                    string[] fields = lineFromFile.Split(';');
-                    if (fields[6] == identifier)
+                    while ((lineFromFile = csvReader.ReadLine()) != null)
                     {
-                        csvReader.Close();
-                        RecordAndPosition = new Tuple<string, int>(lineFromFile, position);
-                        return RecordAndPosition;
+                        string[] fields = lineFromFile.Split(';');
+                        if (fields[6] == identifier)
+                        {
+                            if (!deleted && fields[10] == 0.ToString() || deleted && fields[10] == 1.ToString())
+                            csvReader.Close();
+                            RecordAndPosition = new Tuple<string, int>(lineFromFile, position);
+                            return RecordAndPosition;
+                        }
+                        position++;
                     }
-                    position++;
+                }
+                else
+                {
+                    while ((lineFromFile = csvReader.ReadLine()) != null)
+                    {
+                        string[] fields = lineFromFile.Split(';');
+                        if (fields[6] == identifier)
+                        {
+                            csvReader.Close();
+                            RecordAndPosition = new Tuple<string, int>(lineFromFile, position);
+                            return RecordAndPosition;
+                        }
+                        position++;
+                    }
                 }
                 csvReader.Close();
             }
@@ -223,14 +246,69 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
             for (int i = 0; i < numFields; i++)
                 lineToFile += elements[i] + ";";
             lineToFile = lineToFile.PadRight(256) + "##";
+            lineToFile = lineToFile.Replace('\uFFFD', '\'');
             using (FileStream csvRanWriter = new FileStream(fileName, FileMode.Open, FileAccess.ReadWrite))
             {
                 byte[] bytes = Encoding.UTF8.GetBytes(lineToFile);
-                long charNum = position * 260;
-                csvRanWriter.Seek(charNum, SeekOrigin.Current);
+                csvRanWriter.Seek(position * recordLen, SeekOrigin.Current);
                 csvRanWriter.Write(bytes, 0, bytes.Length);
                 csvRanWriter.Close();
             }
         }
+        public void deleteRecord(string fileName, int numFields, string elements, int position, int recordLen)
+        {
+            string lineToFile = "";
+            string[] fields = elements.Split(';');
+            for (int i = 0; i < numFields - 1; i++)
+                lineToFile += fields[i] + ";";
+            lineToFile += "1;";
+            lineToFile = lineToFile.PadRight(256) + "##";
+            using (FileStream csvRanWriter = new FileStream(fileName, FileMode.Open, FileAccess.ReadWrite))
+            {
+                byte[] bytes = Encoding.UTF8.GetBytes(lineToFile);
+                csvRanWriter.Seek(position * recordLen, SeekOrigin.Current);
+                csvRanWriter.Write(bytes, 0, bytes.Length);
+                csvRanWriter.Close();
+            }
+        }
+        public void recoverRecord(string fileName, int numFields, string elements, int position, int recordLen)
+        {
+            string lineToFile = "";
+            for (int i = 0; i < numFields - 1; i++)
+                lineToFile += elements[i] + ";";
+            lineToFile += "0;";
+            lineToFile = lineToFile.PadRight(256) + "##";
+            using (FileStream csvRanWriter = new FileStream(fileName, FileMode.Open, FileAccess.ReadWrite))
+            {
+                byte[] bytes = Encoding.UTF8.GetBytes(lineToFile);
+                csvRanWriter.Seek(position * recordLen, SeekOrigin.Current);
+                csvRanWriter.Write(bytes, 0, bytes.Length);
+                csvRanWriter.Close();
+            }
+        }
+        public void permDelete(string fileName, string fileNameTemp)
+        {
+            string lineFromFile;
+            using (StreamReader csvReader = File.OpenText(fileName))
+            {
+                using (StreamWriter csvWriter = new StreamWriter(fileNameTemp))
+                {
+                    lineFromFile = csvReader.ReadLine();
+                    while ((lineFromFile = csvReader.ReadLine()) != null)
+                    {
+                        string[] fields = lineFromFile.Split(';');
+                        if (fields[10] == "0")
+                        {
+                            csvWriter.WriteLine(lineFromFile);
+                        }
+                    }
+                    csvWriter.Close();
+                }
+                csvReader.Close();
+            }
+            File.Delete(fileName);
+            File.Move(fileNameTemp, fileName);
+            File.Delete(fileNameTemp);
+        }
     }
-}
+} 

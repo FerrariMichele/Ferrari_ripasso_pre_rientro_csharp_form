@@ -73,6 +73,7 @@ namespace Ferrari_ripasso_pre_rientro_csharp_form
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             CloseForms();
+            OpenForm<FormDelete>();
         }
         private void buttonLogOut_Click(object sender, EventArgs e)
         {
